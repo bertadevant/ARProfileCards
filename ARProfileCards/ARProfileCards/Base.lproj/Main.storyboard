@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.13"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ARView-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" userLabel="ARView" customClass="ViewController" customModule="ARProfileCards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="ARView" customClass="ARView" customModule="RealityKit">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfI-9H-wbe" customClass="StatusView" customModule="ARProfileCards" customModuleProvider="target">
+                                <rect key="frame" x="10" y="44" width="394" height="22"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eni-Xv-3ug">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="22"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkl-Jy-YEa">
+                                                <rect key="frame" x="0.0" y="0.0" width="238" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXU-J5-qrs">
+                                                <rect key="frame" x="248" y="0.0" width="146" height="22"/>
+                                                <state key="normal" image="arrow.clockwise" catalog="system"/>
+                                                <connections>
+                                                    <action selector="restartExperience:" destination="wfI-9H-wbe" eventType="touchUpInside" id="CES-il-J49"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eni-Xv-3ug" firstAttribute="width" secondItem="wfI-9H-wbe" secondAttribute="width" id="1pb-QA-dQs"/>
+                                    <constraint firstItem="eni-Xv-3ug" firstAttribute="centerY" secondItem="wfI-9H-wbe" secondAttribute="centerY" id="LNx-j6-39U"/>
+                                    <constraint firstItem="eni-Xv-3ug" firstAttribute="height" secondItem="wfI-9H-wbe" secondAttribute="height" id="cxl-wp-p9H"/>
+                                    <constraint firstItem="eni-Xv-3ug" firstAttribute="centerX" secondItem="wfI-9H-wbe" secondAttribute="centerX" id="oV3-ep-K5M"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="messageLabel" destination="mkl-Jy-YEa" id="ecP-ze-6BD"/>
+                                    <outlet property="restartExperienceButton" destination="JXU-J5-qrs" id="0lE-AB-pdN"/>
+                                </connections>
+                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JrM-UO-RAy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Lwu-K5-yNR">
+                                    <rect key="frame" x="0.0" y="0.0" width="522" height="2070"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfI-9H-wbe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FNx-vx-du1"/>
+                            <constraint firstItem="wfI-9H-wbe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Vtp-fb-2Uz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wfI-9H-wbe" secondAttribute="trailing" constant="10" id="Yfh-Bu-m1R"/>
+                            <constraint firstItem="JrM-UO-RAy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fHX-e7-vjr"/>
+                            <constraint firstItem="JrM-UO-RAy" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="nH3-iU-ZCP"/>
+                            <constraint firstItem="wfI-9H-wbe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nWl-tk-UjX"/>
+                            <constraint firstItem="JrM-UO-RAy" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="pKf-qM-pNM"/>
+                            <constraint firstItem="JrM-UO-RAy" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" id="qaO-Os-bNn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="arView" destination="8bC-Xf-vdC" id="TPV-4x-avp"/>
+                        <outlet property="blurView" destination="JrM-UO-RAy" id="HnF-Fq-hvp"/>
+                        <outlet property="statusView" destination="wfI-9H-wbe" id="2Gv-xl-7LM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="134"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="56" height="64"/>
+    </resources>
+</document>
